@@ -33,7 +33,7 @@ function Rip() {
       setFetching(true);
       try {
         const response = await axios.get(
-          `https://lifebahnheaven-server.vercel.app/api/v1/posts/post/${_id}`,
+          `http://localhost:3000/api/v1/posts/post/${_id}`,
           {
             headers: {
               Authorization: `Bearer ${currentUser?.data.accessToken}`, // Use access token
@@ -54,7 +54,7 @@ function Rip() {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "https://lifebahnheaven-server.vercel.app/api/v1/users/normal",
+          "http://localhost:3000/api/v1/users/normal",
           {
             headers: {
               Authorization: `Bearer ${currentUser?.data.accessToken}`,
@@ -71,7 +71,7 @@ function Rip() {
     const fetchFlowers = async () => {
       try {
         const response = await axios.get(
-          `https://lifebahnheaven-server.vercel.app/api/v1/flowers/post/${_id}`,
+          `http://localhost:3000/api/v1/flowers/post/${_id}`,
           {
             headers: {
               Authorization: `Bearer ${currentUser?.data.accessToken}`,
@@ -88,7 +88,7 @@ function Rip() {
     const fetchPrayers = async () => {
       try {
         const response = await axios.get(
-          `https://lifebahnheaven-server.vercel.app/api/v1/prayers/post/${_id}`, // Fetch prayers for this RIP
+          `http://localhost:3000/api/v1/prayers/post/${_id}`, // Fetch prayers for this RIP
           {
             headers: {
               Authorization: `Bearer ${currentUser?.data.accessToken}`,
@@ -105,7 +105,7 @@ function Rip() {
     const fetchPhotos = async () => {
       try {
         const response = await axios.get(
-          `https://lifebahnheaven-server.vercel.app/api/v1/photos/post/${_id}`, // Fetch prayers for this RIP
+          `http://localhost:3000/api/v1/photos/post/${_id}`, // Fetch prayers for this RIP
           {
             headers: {
               Authorization: `Bearer ${currentUser?.data.accessToken}`,
@@ -133,7 +133,7 @@ function Rip() {
 
     try {
       await axios.patch(
-        `https://lifebahnheaven-server.vercel.app/api/v1/users/${selectedUser}/roles`,
+        `http://localhost:3000/api/v1/users/${selectedUser}/roles`,
         { roles: "contributor" }, // Changing role to contributor
         {
           headers: {
